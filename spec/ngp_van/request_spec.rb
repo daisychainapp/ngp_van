@@ -62,6 +62,22 @@ module NgpVan
             .to have_been_made
         end
       end
+
+      context 'when the response has a non-success status code' do
+        let(:response_body) do
+          { errors: [{ code: 'NOT_FOUND', text: 'it was not found' }] }.to_json
+        end
+
+        before do
+          stub_request(:get, url).to_return(status: 404, body: response_body)
+        end
+
+        it 'raises an appropriate error' do
+          expect do
+            NgpVan.get(path: '/some/resource')
+          end.to raise_error(NgpVan::NotFound)
+        end
+      end
     end
 
     describe '#post' do
