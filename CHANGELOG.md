@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+# 0.11.0
+
+- [FIXED] Fix RaiseError middleware ([#42](https://github.com/christopherstyles/ngp_van/pull/42) by @lavaturtle).
+
 # 0.10.0
 
 - [ADDED] Phones endpoint ([#33](https://github.com/christopherstyles/ngp_van/pull/33) by @kinsomicrote).
