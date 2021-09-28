@@ -6,8 +6,6 @@ require 'faraday'
 module NgpVan
   module Response
     class RaiseError < Faraday::Response::Middleware
-      private
-
       def on_complete(response)
         error = NgpVan::Error.from_response(response)
         raise error if error
