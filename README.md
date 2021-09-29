@@ -18,7 +18,9 @@ Or add this line to your application's Gemfile:
 gem 'ngp_van'
 ```
 
-`ngp_van` is cryptographically signed. To be sure the gem you install hasn’t been tampered with, add my public key as a trusted certificate:
+### Security
+
+`ngp_van` is cryptographically signed. To be sure the gem you install hasn’t been tampered with, add the public key as a trusted certificate:
 
     gem cert --add <(curl -Ls https://raw.github.com/christopherstyles/ngp_van/master/certs/christopherstyles.pem)
 
@@ -60,7 +62,7 @@ Options can also be set on the configuration object:
 # => "de286a1a-f2e7-421a-91b8-f8cc8201558f|1"
 ```
 
-In a multi-threaded environment you may want to use multiple configurations simultaneously. 
+In a multi-threaded environment you may want to use multiple configurations simultaneously.
 In that case, pass an appropriately setup configuration class to the client object.
 
 ```ruby
@@ -121,8 +123,6 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/christ
 
 This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
