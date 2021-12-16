@@ -1,5 +1,10 @@
 ## [Unreleased]
 
+# 0.11.0
+
+- [FIXED] Fix RaiseError middleware ([#42](https://github.com/christopherstyles/ngp_van/pull/42) by @lavaturtle).
+- [CHANGED] The public key (in `/certs`) has been updated. Please follow the directions in the [README#security](./README.md#security) to add the public key as a trusted certificate if you need to check the gem’s integrity.
+
 # 0.10.0
 
 - [ADDED] Phones endpoint ([#33](https://github.com/christopherstyles/ngp_van/pull/33) by @kinsomicrote).

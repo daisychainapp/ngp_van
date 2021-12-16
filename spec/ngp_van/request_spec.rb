@@ -64,9 +64,12 @@ module NgpVan
       end
 
       context 'when the response has a non-success status code' do
+        let(:response_body) do
+          { errors: [{ code: 'NOT_FOUND', text: 'it was not found' }] }.to_json
+        end
+
         before do
-          stub_request(:get, url)
-            .to_return(status: 404, body: {errors: [{code: 'NOT_FOUND', text: 'it was not found'}]}.to_json)
+          stub_request(:get, url).to_return(status: 404, body: response_body)
         end
 
         it 'raises an appropriate error' do
