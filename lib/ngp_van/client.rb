@@ -23,6 +23,7 @@ require 'ngp_van/client/signups'
 require 'ngp_van/client/stories'
 require 'ngp_van/client/survey_questions'
 require 'ngp_van/client/supporter_groups'
+require 'ngp_van/client/targets'
 require 'ngp_van/client/users'
 
 module NgpVan
@@ -70,6 +71,7 @@ module NgpVan
     include NgpVan::Client::Stories
     include NgpVan::Client::SupporterGroups
     include NgpVan::Client::SurveyQuestions
+    include NgpVan::Client::Targets
     include NgpVan::Client::Users
   end
 end
