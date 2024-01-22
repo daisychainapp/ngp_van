@@ -1,0 +1,11 @@
+{
+  "canvassFileRequestId": 123,
+  "canvassFileRequestGuid": "DC7309A7-19F5-4DC7-8437-33FDBBADC2DA",
+  "savedListId": 555888,
+  "webhookUrl": "https://webhook.example.org/canvassFileRequests",
+  "downloadUrl": "https://vancanvassfiles.blob.core.windows.net/canvass-file/DC7309A7-2012-05-05T10:18:43.6007964-04:00.csv",
+  "status": "Completed",
+  "type": 102,
+  "dateExpired": "2012-05-05T12:18:43.6007964-04:00",
+  "errorCode": null
+}
