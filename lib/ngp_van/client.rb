@@ -12,6 +12,7 @@ require 'ngp_van/client/echoes'
 require 'ngp_van/client/events'
 require 'ngp_van/client/event_types'
 require 'ngp_van/client/export_jobs'
+require 'ngp_van/client/folders'
 require 'ngp_van/client/locations'
 require 'ngp_van/client/notes'
 require 'ngp_van/client/people'
@@ -60,6 +61,7 @@ module NgpVan
     include NgpVan::Client::Events
     include NgpVan::Client::EventTypes
     include NgpVan::Client::ExportJobs
+    include NgpVan::Client::Folders
     include NgpVan::Client::Locations
     include NgpVan::Client::Notes
     include NgpVan::Client::People
