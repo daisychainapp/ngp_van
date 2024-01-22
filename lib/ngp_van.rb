@@ -15,9 +15,9 @@ module NgpVan
     end
 
     # Delegate methods called on NgpVan to the client.
-    def method_missing(method_name, *args, &block)
+    def method_missing(method_name, **args, &block)
       return super unless client.respond_to?(method_name)
-      client.send(method_name, *args, &block)
+      client.send(method_name, **args, &block)
     end
   end
 
