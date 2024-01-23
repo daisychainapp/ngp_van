@@ -87,5 +87,26 @@ module NgpVan
         end
       end
     end
+
+    describe '#get' do
+      let(:config) { NgpVan::Configuration.new }
+      let(:api_key) { 'test_key' }
+      let(:application_name) { 'test_app'}
+      subject { NgpVan::Client.new(config) }
+      let(:url) { build_url(client: subject, path: '/some/resource') }
+
+
+
+      before do
+        config.api_key = api_key
+        config.application_name =  application_name
+        stub_request(:get, url)
+      end
+
+      it 'makes a get request with basic auth headers' do
+        subject.get(path: '/some/resource')
+        expect(a_request(:get, url).with(basic_auth: [application_name, api_key])).to have_been_made
+      end
+    end
   end
 end
