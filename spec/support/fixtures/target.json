@@ -1,0 +1,11 @@
+{
+  "targetId":15880,
+  "name":"API Demo Target",
+  "type":"Static",
+  "description":null,
+  "points":1,
+  "areSubgroupsSticky":false,
+  "status":"Setup",
+  "subgroups":[],
+  "markedSubgroup":null
+}

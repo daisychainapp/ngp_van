@@ -61,6 +61,26 @@ module NgpVan
           expect(saved_list['savedListId']).to eq(999888777)
         end
       end
+
+      describe '#sms_sync' do
+        let(:response) { fixture('sms_sync.json') }
+        let(:url) { build_url(client: client, path: 'savedLists/smsSync') }
+        let(:body) { { syncPeriodStart: "2016-05-23T18:00:00.0000000-04:00", syncPeriodEnd: "2016-05-24T18:00:00.0000000-04:00"} }
+
+        before do
+          stub_request(:post, url).to_return(body: response)
+        end
+
+        it 'requests the correct resource' do
+          client.sms_sync(body: body)
+          expect(a_request(:post, url).with(body: body)).to have_been_made
+        end
+
+        it 'returns a saved list ID' do
+          response = client.sms_sync(body: body)
+          expect(response['savedListId']).to eq 123
+        end
+      end
     end
   end
 end

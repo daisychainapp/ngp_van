@@ -5,6 +5,7 @@ require 'ngp_van/request'
 require 'ngp_van/response'
 require 'ngp_van/client/activist_codes'
 require 'ngp_van/client/canvass_responses'
+require 'ngp_van/client/canvass_file_requests'
 require 'ngp_van/client/codes'
 require 'ngp_van/client/demographics'
 require 'ngp_van/client/district_fields'
@@ -12,6 +13,7 @@ require 'ngp_van/client/echoes'
 require 'ngp_van/client/events'
 require 'ngp_van/client/event_types'
 require 'ngp_van/client/export_jobs'
+require 'ngp_van/client/folders'
 require 'ngp_van/client/locations'
 require 'ngp_van/client/notes'
 require 'ngp_van/client/people'
@@ -23,6 +25,7 @@ require 'ngp_van/client/signups'
 require 'ngp_van/client/stories'
 require 'ngp_van/client/survey_questions'
 require 'ngp_van/client/supporter_groups'
+require 'ngp_van/client/targets'
 require 'ngp_van/client/users'
 
 module NgpVan
@@ -52,6 +55,7 @@ module NgpVan
     include NgpVan::Response
     include NgpVan::Client::ActivistCodes
     include NgpVan::Client::CanvassResponses
+    include NgpVan::Client::CanvassFileRequests
     include NgpVan::Client::Codes
     include NgpVan::Client::Demographics
     include NgpVan::Client::DistrictFields
@@ -59,6 +63,7 @@ module NgpVan
     include NgpVan::Client::Events
     include NgpVan::Client::EventTypes
     include NgpVan::Client::ExportJobs
+    include NgpVan::Client::Folders
     include NgpVan::Client::Locations
     include NgpVan::Client::Notes
     include NgpVan::Client::People
@@ -70,6 +75,7 @@ module NgpVan
     include NgpVan::Client::Stories
     include NgpVan::Client::SupporterGroups
     include NgpVan::Client::SurveyQuestions
+    include NgpVan::Client::Targets
     include NgpVan::Client::Users
   end
 end
