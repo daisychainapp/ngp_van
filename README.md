@@ -1,6 +1,8 @@
 # The NGP VAN Ruby Gem
 
-[![Build Status](https://travis-ci.org/christopherstyles/ngp_van.svg?branch=master)](https://travis-ci.org/christopherstyles/ngp_van) [![Test Coverage](https://codeclimate.com/github/christopherstyles/ngp_van/badges/coverage.svg)](https://codeclimate.com/github/christopherstyles/ngp_van/coverage) [![Code Climate](https://codeclimate.com/github/christopherstyles/ngp_van/badges/gpa.svg)](https://codeclimate.com/github/christopherstyles/ngp_van) [![Inline docs](http://inch-ci.org/github/christopherstyles/ngp_van.svg?branch=master)](http://inch-ci.org/github/christopherstyles/ngp_van) [![Gem Version](https://badge.fury.io/rb/ngp_van.svg)](https://badge.fury.io/rb/ngp_van)
+[![Ruby](https://github.com/daisychainapp/ngp_van/actions/workflows/ruby.yml/badge.svg)](https://github.com/daisychainapp/ngp_van/actions/workflows/ruby.yml)
+[![Inline docs](http://inch-ci.org/github/christopherstyles/ngp_van.svg?branch=master)](http://inch-ci.org/github/christopherstyles/ngp_van) 
+[![Gem Version](https://badge.fury.io/rb/ngp_van.svg)](https://badge.fury.io/rb/ngp_van)
 
 An unofficial Ruby wrapper for the [NGP VAN](http://developers.everyaction.com/) RESTful API.
 
