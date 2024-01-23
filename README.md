@@ -20,23 +20,6 @@ Or add this line to your application's Gemfile:
 gem 'ngp_van'
 ```
 
-### Security
-
-`ngp_van` is cryptographically signed. To be sure the gem you install hasn’t been tampered with, add the public key as a trusted certificate:
-
-    gem cert --add <(curl -Ls https://raw.github.com/christopherstyles/ngp_van/master/certs/christopherstyles.pem)
-
-Then install with:
-
-    gem install ngp_van -P MediumSecurity
-
-or if using bundler:
-
-    bundle install --trust-policy MediumSecurity
-
-The `MediumSecurity` trust profile will verify signed gems, but allow the installation of unsigned dependencies.
-
-This is necessary because not all of `ngp_van`s dependencies are signed, so we cannot use `HighSecurity`.
 
 ## Configuration
 

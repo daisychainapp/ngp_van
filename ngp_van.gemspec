@@ -7,9 +7,8 @@ require 'ngp_van/version'
 
 Gem::Specification.new do |spec|
   spec.authors = ['Christopher Styles']
-  spec.cert_chain = ['certs/christopherstyles.pem']
   spec.description = 'An unofficial Ruby wrapper for the NGP VAN API'
-  spec.email = ['christopherstyles@gmail.com']
+  spec.email = ['christopherstyles@gmail.com', 'nathan@daisychain.app']
   spec.files = `git ls-files lib spec README.md`.split($INPUT_RECORD_SEPARATOR)
   spec.homepage = 'https://github.com/christopherstyles/ngp_van'
   spec.licenses = ['MIT']
