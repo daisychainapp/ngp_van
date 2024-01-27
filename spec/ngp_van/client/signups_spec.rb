@@ -46,7 +46,7 @@ module NgpVan
       end
 
       describe '#signup' do
-        let(:params) { Hash.new }
+        let(:params) { {} }
         let(:response) { fixture('signup.json') }
         let(:url) { build_url(client: client, path: 'signups/2452') }
 
@@ -119,7 +119,7 @@ module NgpVan
 
       describe '#create_signup' do
         let(:body) do
-          JSON.parse(File.read(fixture_path + '/create_signup.json'))
+          JSON.parse(File.read("#{fixture_path}/create_signup.json"))
         end
 
         let(:url) { build_url(client: client, path: 'signups') }
@@ -153,7 +153,7 @@ module NgpVan
 
       describe '#update_signup' do
         let(:body) do
-          JSON.parse(File.read(fixture_path + '/update_signup.json'))
+          JSON.parse(File.read("#{fixture_path}/update_signup.json"))
         end
 
         let(:url) { build_url(client: client, path: 'signups/2452') }

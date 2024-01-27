@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 $LOAD_PATH << File.join(File.dirname(__FILE__), 'lib')
 
 require 'ngp_van'
@@ -12,4 +14,4 @@ client = NgpVan::Client.new(configuration)
 
 byebug
 
-puts "Bye!"
+puts 'Bye!'

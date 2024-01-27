@@ -10,7 +10,7 @@ module NgpVan
 
     API_ENDPOINT = 'https://api.securevan.com/v4/'
 
-    USER_AGENT = "NGP VAN Ruby Gem #{NgpVan::VERSION}"
+    USER_AGENT = "NGP VAN Ruby Gem #{NgpVan::VERSION}".freeze
 
     class << self
       # Default Application Name from {APPLICATION_NAME}

@@ -48,7 +48,7 @@ module NgpVan
       end
 
       describe '#canvass_responses_input_types' do
-        let(:params) { Hash.new }
+        let(:params) { {} }
         let(:response) { fixture('canvass_responses_input_types.json') }
 
         let(:url) do

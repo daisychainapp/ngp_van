@@ -3,7 +3,6 @@
 require 'spec_helper'
 
 module NgpVan
-  # rubocop:disable Metrics/ClassLength
   class Client
     RSpec.describe Folders do
       let(:client) { NgpVan::Client.new }
@@ -38,7 +37,7 @@ module NgpVan
       end
 
       describe '#folder' do
-        let(:params) { Hash.new }
+        let(:params) { {} }
         let(:response) { fixture('folder.json') }
         let(:url) { build_url(client: client, path: 'folders/44') }
 

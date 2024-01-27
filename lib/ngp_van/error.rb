@@ -38,7 +38,7 @@ module NgpVan
         when 500..599 then NgpVan::ServerError
         end
 
-      error_klass.new(response) if error_klass
+      error_klass&.new(response)
     end
 
     def initialize(response = nil)

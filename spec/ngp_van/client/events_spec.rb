@@ -10,7 +10,7 @@ module NgpVan
 
       describe '#create_event' do
         let(:body) do
-          JSON.parse(File.read(fixture_path + '/create_event.json'))
+          JSON.parse(File.read("#{fixture_path}/create_event.json"))
         end
 
         let(:url) { build_url(client: client, path: 'events') }
@@ -44,7 +44,7 @@ module NgpVan
 
       describe '#create_event_shift' do
         let(:body) do
-          JSON.parse(File.read(fixture_path + '/create_event_shift.json'))
+          JSON.parse(File.read("#{fixture_path}/create_event_shift.json"))
         end
 
         let(:url) { build_url(client: client, path: 'events/234234/shifts') }
@@ -149,7 +149,7 @@ module NgpVan
 
       describe '#update_event' do
         let(:body) do
-          JSON.parse(File.read(fixture_path + '/update_event.json'))
+          JSON.parse(File.read("#{fixture_path}/update_event.json"))
         end
 
         let(:url) { build_url(client: client, path: 'events/1374') }

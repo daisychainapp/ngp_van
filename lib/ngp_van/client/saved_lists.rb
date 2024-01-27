@@ -13,7 +13,7 @@ module NgpVan
       end
 
       def sms_sync(body: {})
-        post(path: "savedLists/smsSync", body: body)
+        post(path: 'savedLists/smsSync', body: body)
       end
     end
   end

@@ -8,7 +8,7 @@ module NgpVan
       let(:client) { NgpVan::Client.new }
 
       describe '#note_category_types' do
-        let(:params) { Hash.new }
+        let(:params) { {} }
         let(:response) { fixture('note_category_types.json') }
         let(:url) { build_url(client: client, path: 'notes/categoryTypes') }
 
@@ -40,7 +40,7 @@ module NgpVan
       end
 
       describe '#note_categories' do
-        let(:params) { Hash.new }
+        let(:params) { {} }
         let(:response) { fixture('note_categories.json') }
         let(:url) { build_url(client: client, path: 'notes/categories') }
 
@@ -72,7 +72,7 @@ module NgpVan
       end
 
       describe '#note_category' do
-        let(:params) { Hash.new }
+        let(:params) { {} }
         let(:response) { fixture('note_category.json') }
         let(:url) { build_url(client: client, path: 'notes/categories/24') }
 

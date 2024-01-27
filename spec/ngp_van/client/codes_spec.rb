@@ -9,7 +9,7 @@ module NgpVan
       let(:client) { NgpVan::Client.new }
 
       describe '#code_supported_entities' do
-        let(:params) { Hash.new }
+        let(:params) { {} }
         let(:response) { fixture('code_supported_entities.json') }
         let(:url) { build_url(client: client, path: 'codes/supportedEntities') }
 
@@ -31,13 +31,15 @@ module NgpVan
 
         it 'returns an array of items' do
           code_supported_entities = client.code_supported_entities(
-            params: params)
+            params: params
+          )
           expect(code_supported_entities).to be_a(Array)
         end
 
         it 'returns a collection of code supported entities' do
           code_supported_entities = client.code_supported_entities(
-            params: params)
+            params: params
+          )
           expect(code_supported_entities.first).to eq('Contacts')
         end
       end
@@ -80,7 +82,7 @@ module NgpVan
       end
 
       describe '#code' do
-        let(:params) { Hash.new }
+        let(:params) { {} }
         let(:response) { fixture('code.json') }
         let(:url) { build_url(client: client, path: 'codes/20515') }
 
@@ -112,7 +114,7 @@ module NgpVan
       end
 
       describe '#create_code' do
-        let(:body) { JSON.parse(File.read(fixture_path + '/code.json')) }
+        let(:body) { JSON.parse(File.read("#{fixture_path}/code.json")) }
         let(:url) { build_url(client: client, path: 'codes') }
 
         before do
@@ -143,7 +145,7 @@ module NgpVan
       end
 
       describe '#update_code' do
-        let(:body) { JSON.parse(File.read(fixture_path + '/update_code.json')) }
+        let(:body) { JSON.parse(File.read("#{fixture_path}/update_code.json")) }
         let(:url) { build_url(client: client, path: 'codes/20516') }
 
         before do
