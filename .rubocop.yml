@@ -1,6 +1,7 @@
 AllCops:
   Exclude:
     - 'Gemfile'
+    - 'example.rb'
 
   DisplayStyleGuide: true
 

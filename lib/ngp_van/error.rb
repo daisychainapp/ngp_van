@@ -40,6 +40,8 @@ module NgpVan
 
       error_klass&.new(response)
     end
+    # rubocop:enable Metrics/MethodLength, Metrics/AbcSize,
+    # rubocop:enable Style/CyclomaticComplexity
 
     def initialize(response = nil)
       @response = response

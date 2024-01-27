@@ -36,10 +36,12 @@ module NgpVan
         post(path: "people/#{id}/codes", body: body)
       end
 
+      # rubocop:disable Naming/VariableName,Naming/MethodParameterName
       def delete_code_from_person(id:, codeId:)
         verify_ids(id, codeId)
         delete(path: "people/#{id}/codes/#{codeId}")
       end
+      # rubocop:enable Naming/VariableName,Naming/MethodParameterName
 
       def update_person_by_van_id(id:, body: {})
         verify_id(id)
