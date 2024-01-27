@@ -203,3 +203,4 @@ module NgpVan
     end
   end
 end
+# rubocop:enable Metrics/ClassLength
