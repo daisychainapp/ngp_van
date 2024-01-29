@@ -48,7 +48,7 @@ module NgpVan
       end
       nil
     end
-    alias_method :verify_ids, :verify_id
+    alias verify_ids verify_id
 
     include NgpVan::Connection
     include NgpVan::Request

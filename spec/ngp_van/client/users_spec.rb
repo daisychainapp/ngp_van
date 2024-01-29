@@ -8,7 +8,7 @@ module NgpVan
       let(:client) { NgpVan::Client.new }
 
       describe '#user_district_field_values' do
-        let(:params) { Hash.new }
+        let(:params) { {} }
         let(:response) { fixture('user_district_field_values.json') }
 
         let(:url) do
@@ -45,7 +45,7 @@ module NgpVan
       describe '#create_user_district_field_values' do
         let(:body) do
           JSON.parse(
-            File.read(fixture_path + '/create_user_district_field_values.json')
+            File.read("#{fixture_path}/create_user_district_field_values.json")
           )
         end
 
@@ -83,7 +83,7 @@ module NgpVan
       describe '#update_user_district_field_values' do
         let(:body) do
           JSON.parse(
-            File.read(fixture_path + '/update_user_district_field_values.json')
+            File.read("#{fixture_path}/update_user_district_field_values.json")
           )
         end
 

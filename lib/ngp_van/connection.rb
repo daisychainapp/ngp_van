@@ -24,5 +24,6 @@ module NgpVan
         connection.adapter(Faraday.default_adapter)
       end
     end
+    # rubocop:enable Metrics/MethodLength
   end
 end

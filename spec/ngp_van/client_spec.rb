@@ -64,9 +64,9 @@ module NgpVan
 
         context 'when invalid' do
           it 'raises an error' do
-            expect {
+            expect do
               client.verify_id('fu?evil=mode')
-            }.to raise_error(NgpVan::InvalidID)
+            end.to raise_error(NgpVan::InvalidID)
           end
         end
       end
@@ -80,9 +80,9 @@ module NgpVan
 
         context 'when invalid' do
           it 'raises an error' do
-            expect {
+            expect do
               client.verify_id('abc', 'fu?evil=mode', 'abc-123')
-            }.to raise_error(NgpVan::InvalidID)
+            end.to raise_error(NgpVan::InvalidID)
           end
         end
       end
@@ -91,15 +91,13 @@ module NgpVan
     describe '#get' do
       let(:config) { NgpVan::Configuration.new }
       let(:api_key) { 'test_key' }
-      let(:application_name) { 'test_app'}
+      let(:application_name) { 'test_app' }
       subject { NgpVan::Client.new(config) }
       let(:url) { build_url(client: subject, path: '/some/resource') }
 
-
-
       before do
         config.api_key = api_key
-        config.application_name =  application_name
+        config.application_name = application_name
         stub_request(:get, url)
       end
 

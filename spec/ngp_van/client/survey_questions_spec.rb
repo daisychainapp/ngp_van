@@ -48,7 +48,7 @@ module NgpVan
       end
 
       describe '#survey_question' do
-        let(:params) { Hash.new }
+        let(:params) { {} }
         let(:response) { fixture('survey_question.json') }
         let(:url) { build_url(client: client, path: 'surveyQuestions/54949') }
 

@@ -1,10 +1,12 @@
 AllCops:
   Exclude:
     - 'Gemfile'
+    - 'example.rb'
+    - 'vendor/bundle/**/*'
 
   DisplayStyleGuide: true
 
-  TargetRubyVersion: 3.2.3
+  TargetRubyVersion: 3.0
 
 Documentation:
   Enabled: false
@@ -17,6 +19,9 @@ Style/Documentation:
   Enabled: false
 
 Style/FileName:
+  Enabled: false
+
+Metrics/ClassLength:
   Enabled: false
 
 Style/NumericLiterals:

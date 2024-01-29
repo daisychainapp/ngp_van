@@ -3,7 +3,6 @@
 require 'spec_helper'
 
 module NgpVan
-  # rubocop:disable Metrics/ClassLength
   class Client
     RSpec.describe Locations do
       let(:client) { NgpVan::Client.new }
@@ -46,7 +45,7 @@ module NgpVan
       end
 
       describe '#location' do
-        let(:params) { Hash.new }
+        let(:params) { {} }
         let(:response) { fixture('location.json') }
         let(:url) { build_url(client: client, path: 'locations/272') }
 
@@ -79,7 +78,7 @@ module NgpVan
 
       describe '#find_or_create_location' do
         let(:body) do
-          JSON.parse(File.read(fixture_path + '/create_location.json'))
+          JSON.parse(File.read("#{fixture_path}/create_location.json"))
         end
 
         let(:url) { build_url(client: client, path: 'locations/findOrCreate') }
@@ -113,7 +112,7 @@ module NgpVan
 
       describe '#create_location' do
         let(:body) do
-          JSON.parse(File.read(fixture_path + '/create_location.json'))
+          JSON.parse(File.read("#{fixture_path}/create_location.json"))
         end
 
         let(:url) { build_url(client: client, path: 'locations') }

@@ -65,7 +65,9 @@ module NgpVan
       describe '#sms_sync' do
         let(:response) { fixture('sms_sync.json') }
         let(:url) { build_url(client: client, path: 'savedLists/smsSync') }
-        let(:body) { { syncPeriodStart: "2016-05-23T18:00:00.0000000-04:00", syncPeriodEnd: "2016-05-24T18:00:00.0000000-04:00"} }
+        let(:body) do
+          { syncPeriodStart: '2016-05-23T18:00:00.0000000-04:00', syncPeriodEnd: '2016-05-24T18:00:00.0000000-04:00' }
+        end
 
         before do
           stub_request(:post, url).to_return(body: response)

@@ -51,7 +51,7 @@ module NgpVan
       end
 
       describe '#printed_list' do
-        let(:params) { Hash.new }
+        let(:params) { {} }
         let(:response) { fixture('printed_list.json') }
 
         let(:url) do

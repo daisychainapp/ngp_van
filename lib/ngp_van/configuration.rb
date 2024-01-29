@@ -54,13 +54,9 @@ module NgpVan
     def inspect
       inspected = super
 
-      if NgpVan.configuration.api_key
-        filter_value!(inspected, NgpVan.configuration.api_key)
-      end
+      filter_value!(inspected, NgpVan.configuration.api_key) if NgpVan.configuration.api_key
 
-      if NgpVan.configuration.application_name
-        filter_value!(inspected, NgpVan.configuration.application_name)
-      end
+      filter_value!(inspected, NgpVan.configuration.application_name) if NgpVan.configuration.application_name
 
       inspected
     end

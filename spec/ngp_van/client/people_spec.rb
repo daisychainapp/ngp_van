@@ -3,14 +3,13 @@
 require 'spec_helper'
 
 module NgpVan
-  # rubocop:disable Metrics/ClassLength
   class Client
     RSpec.describe People do
       let(:client) { NgpVan::Client.new }
 
       describe '#find_person' do
         let(:body) do
-          JSON.parse(File.read(fixture_path + '/match_candidate.json'))
+          JSON.parse(File.read("#{fixture_path}/match_candidate.json"))
         end
 
         let(:response) { fixture('match_response.json') }
@@ -42,7 +41,7 @@ module NgpVan
 
       describe '#find_or_create_person' do
         let(:body) do
-          JSON.parse(File.read(fixture_path + '/match_candidate.json'))
+          JSON.parse(File.read("#{fixture_path}/match_candidate.json"))
         end
 
         let(:response) { fixture('match_response.json') }
@@ -150,7 +149,7 @@ module NgpVan
 
       describe '#create_canvass_responses_for_person' do
         let(:body) do
-          JSON.parse(File.read(fixture_path + '/canvass_response.json'))
+          JSON.parse(File.read("#{fixture_path}/canvass_response.json"))
         end
 
         let(:url) do
@@ -185,7 +184,7 @@ module NgpVan
 
       describe '#create_canvass_responses_for_person_by_type' do
         let(:body) do
-          JSON.parse(File.read(fixture_path + '/canvass_response.json'))
+          JSON.parse(File.read("#{fixture_path}/canvass_response.json"))
         end
 
         let(:url) do
@@ -225,7 +224,7 @@ module NgpVan
 
       describe '#apply_code_to_person' do
         let(:url) { build_url(client: client, path: 'people/123123/codes') }
-        let(:request_body) { {'codeId' => 123456} }
+        let(:request_body) { { 'codeId' => 123456 } }
 
         before do
           stub_request(:post, url)

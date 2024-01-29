@@ -3,7 +3,6 @@
 require 'spec_helper'
 
 module NgpVan
-  # rubocop:disable Metrics/ClassLength
   class Client
     RSpec.describe Targets do
       let(:client) { NgpVan::Client.new }
@@ -48,7 +47,7 @@ module NgpVan
       end
 
       describe '#target' do
-        let(:params) { Hash.new }
+        let(:params) { {} }
         let(:response) { fixture('target.json') }
         let(:url) { build_url(client: client, path: 'targets/15880') }
 
