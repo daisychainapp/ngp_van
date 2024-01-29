@@ -2,6 +2,7 @@ AllCops:
   Exclude:
     - 'Gemfile'
     - 'example.rb'
+    - 'vendor/bundle/**/*'
 
   DisplayStyleGuide: true
 
