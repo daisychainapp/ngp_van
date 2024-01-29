@@ -21,6 +21,9 @@ Style/Documentation:
 Style/FileName:
   Enabled: false
 
+Metrics/ClassLength:
+  Enabled: false
+
 Style/NumericLiterals:
   Exclude:
     - 'spec/**/*'

@@ -3,7 +3,6 @@
 require 'spec_helper'
 
 module NgpVan
-  # rubocop:disable Metrics/ClassLength
   class Client
     RSpec.describe Events do
       let(:client) { NgpVan::Client.new }
@@ -203,4 +202,3 @@ module NgpVan
     end
   end
 end
-# rubocop:enable Metrics/ClassLength
