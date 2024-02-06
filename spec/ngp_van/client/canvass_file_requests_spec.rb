@@ -9,7 +9,7 @@ module NgpVan
 
       describe '#canvass_file_requests' do
         let(:response) { fixture('canvass_file_request.json') }
-        let(:url) { build_url(client: client, path: 'canvass_file_requests') }
+        let(:url) { build_url(client: client, path: 'canvassFileRequests') }
         let(:body) { { savedListId: 555888, webhookUrl: 'https://webhook.example.org/canvassFileRequests', type: 102 } }
 
         before do
@@ -40,7 +40,7 @@ module NgpVan
 
       describe '#canvass_file_request' do
         let(:response) { fixture('canvass_file_request.json') }
-        let(:url) { build_url(client: client, path: 'canvass_file_requests/123') }
+        let(:url) { build_url(client: client, path: 'canvassFileRequests/123') }
 
         before do
           stub_request(:get, url)
