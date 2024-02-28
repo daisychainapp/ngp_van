@@ -1,0 +1,17 @@
+{
+  "items": [
+    {
+      "databaseName": "SmartVAN Massachusetts",
+      "hasMyVoters": true,
+      "hasMyCampaign": true,
+      "committeeName": "People for Good",
+      "apiKeyTypeName": "Custom Integration",
+      "keyReference": "1234",
+      "userFirstName": "peopleforgood",
+      "userLastName": "api",
+      "username": "peopleforgood.api"
+    }
+  ],
+  "nextPageLink": null,
+  "count": 1
+}

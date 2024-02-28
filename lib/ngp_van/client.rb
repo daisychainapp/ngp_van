@@ -4,6 +4,7 @@ require 'ngp_van/connection'
 require 'ngp_van/request'
 require 'ngp_van/response'
 require 'ngp_van/client/activist_codes'
+require 'ngp_van/client/api_key_profiles'
 require 'ngp_van/client/canvass_responses'
 require 'ngp_van/client/canvass_file_requests'
 require 'ngp_van/client/codes'
@@ -54,6 +55,7 @@ module NgpVan
     include NgpVan::Request
     include NgpVan::Response
     include NgpVan::Client::ActivistCodes
+    include NgpVan::Client::ApiKeyProfiles
     include NgpVan::Client::CanvassResponses
     include NgpVan::Client::CanvassFileRequests
     include NgpVan::Client::Codes
