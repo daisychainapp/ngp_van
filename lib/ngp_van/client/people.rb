@@ -11,6 +11,10 @@ module NgpVan
         post(path: 'people/findOrCreate', body: body)
       end
 
+      def find_by_phone(phone_number:)
+        post(path: 'people/findByPhone', body: { phoneNumber: phone_number })
+      end
+
       def person(id:, params: {})
         verify_id(id)
         get(path: "people/#{id}", params: params)
