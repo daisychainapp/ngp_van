@@ -11,7 +11,7 @@ module NgpVan
         post(path: 'people/findOrCreate', body: body)
       end
 
-      def find_by_phone(phone_number:)
+      def find_person_by_phone(phone_number:)
         post(path: 'people/findByPhone', body: { phoneNumber: phone_number })
       end
 
