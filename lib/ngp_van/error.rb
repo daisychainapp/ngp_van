@@ -45,14 +45,28 @@ module NgpVan
 
     def initialize(response = nil)
       @response = response
-      @body = ::JSON.parse(response[:body])
+      if json_response?(response)
+        @body = ::JSON.parse(response[:body])
+        @errors = body.delete('errors')
+      else
+        @body = response[:body]
+      end
       @status = response[:status]
-      @errors = body.delete('errors')
 
       super(build_error)
     end
 
     private
+
+    # The API normally returns JSON error payloads, but infrastructure in
+    # front of it (proxies, load balancers, CDNs) can return non-JSON bodies
+    # such as an HTML 502 page. Only parse the body as JSON when the response
+    # actually advertises it, otherwise JSON parsing would mask the real
+    # HTTP error with a JSON::ParserError.
+    def json_response?(response)
+      content_type = response.response_headers&.[]('Content-Type')
+      content_type&.match?(%r{application/json}i) || false
+    end
 
     def build_error
       return nil if response.nil?

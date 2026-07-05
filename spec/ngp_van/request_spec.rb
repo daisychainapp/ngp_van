@@ -69,13 +69,49 @@ module NgpVan
         end
 
         before do
-          stub_request(:get, url).to_return(status: 404, body: response_body)
+          stub_request(:get, url).to_return(
+            status: 404,
+            headers: { 'Content-Type' => 'application/json' },
+            body: response_body
+          )
         end
 
         it 'raises an appropriate error' do
-          expect do
-            NgpVan.get(path: '/some/resource')
-          end.to raise_error(NgpVan::NotFound)
+          expect { NgpVan.get(path: '/some/resource') }
+            .to raise_error(NgpVan::NotFound) do |error|
+              expect(error.errors&.count).to eq(1)
+              expect(error.errors[0]['code']).to eq('NOT_FOUND')
+              expect(error.errors[0]['text']).to eq('it was not found')
+            end
+        end
+      end
+
+      context 'when the response is not in JSON format' do
+        let(:response_body) do
+          <<-HTML
+            <html class="no-js" lang="en-US">
+              <head><title>502 Bad Gateway</title></head>
+              <body>
+                <span>Error code 502</span>
+              </body>
+            </html>
+          HTML
+        end
+
+        before do
+          stub_request(:get, url).to_return(
+            status: 502,
+            headers: { 'Content-Type' => 'text/html' },
+            body: response_body
+          )
+        end
+
+        it 'raises an appropriate error without attempting to parse the body' do
+          expect { NgpVan.get(path: '/some/resource') }
+            .to raise_error(NgpVan::BadGateway) do |error|
+              expect(error.body).to eq(response_body)
+              expect(error.errors).to be_nil
+            end
         end
       end
     end

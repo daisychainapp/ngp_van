@@ -6,6 +6,7 @@
 - [ADDED] Disbursements endpoints: `create_or_update_disbursement`, `disbursement`, and `recent_disbursements`.
 - [ADDED] Changed Entity Export Jobs endpoints: `changed_entity_resources`, `changed_entity_fields`, `create_changed_entity_export_job`, and `changed_entity_export_job`.
 - [ADDED] Optional per-request `headers` support to `post`/`put` requests.
+- [FIXED] `NgpVan::Error` no longer attempts to `JSON.parse` non-JSON error responses (e.g. an HTML 502 from an upstream proxy), which previously masked the real HTTP error with a `JSON::ParserError`. The body is now only parsed (and `errors` extracted) when the response `Content-Type` is JSON; otherwise the raw body is preserved on `error.body`. Ported from [controlshift/ngp_van](https://github.com/controlshift/ngp_van).
 
 # 0.11.0
 
