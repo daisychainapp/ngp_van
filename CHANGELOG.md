@@ -1,5 +1,12 @@
 ## [Unreleased]
 
+- [ADDED] Contributions endpoints (`create_contribution`, `contribution`, `contribution_by_type`, `contribution_attribution_types`, `create_or_update_contribution_attribution`, `delete_contribution_attribution`, `adjust_contribution`), ported from [controlshift/ngp_van](https://github.com/controlshift/ngp_van).
+- [ADDED] Designations endpoint (`designations`), ported from [controlshift/ngp_van](https://github.com/controlshift/ngp_van).
+- [ADDED] Additional Contributions endpoints: `create_contribution_payment` (`POST /contributions/payments`, with optional `Idempotency-Key` header) and `recent_contributions` (`GET /contributions/recentContributions`).
+- [ADDED] Disbursements endpoints: `create_or_update_disbursement`, `disbursement`, and `recent_disbursements`.
+- [ADDED] Changed Entity Export Jobs endpoints: `changed_entity_resources`, `changed_entity_fields`, `create_changed_entity_export_job`, and `changed_entity_export_job`.
+- [ADDED] Optional per-request `headers` support to `post`/`put` requests.
+
 # 0.11.0
 
 - [FIXED] Fix RaiseError middleware ([#42](https://github.com/christopherstyles/ngp_van/pull/42) by @lavaturtle).

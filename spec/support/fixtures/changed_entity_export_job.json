@@ -1,0 +1,15 @@
+{
+  "exportJobId": 555444333,
+  "dateChangedFrom": "2026-06-01T00:00:00Z",
+  "dateChangedTo": "2026-06-30T00:00:00Z",
+  "files": [
+    {
+      "downloadUrl": "https://ngpvan.blob.core.windows.net/changedentities/555444333.csv",
+      "dateExpired": "2026-07-06T00:00:00Z"
+    }
+  ],
+  "jobStatus": "Complete",
+  "message": null,
+  "code": null,
+  "exportedRecordCount": 42
+}

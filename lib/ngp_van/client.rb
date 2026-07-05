@@ -7,8 +7,12 @@ require 'ngp_van/client/activist_codes'
 require 'ngp_van/client/api_key_profiles'
 require 'ngp_van/client/canvass_responses'
 require 'ngp_van/client/canvass_file_requests'
+require 'ngp_van/client/changed_entity_export_jobs'
 require 'ngp_van/client/codes'
+require 'ngp_van/client/contributions'
 require 'ngp_van/client/demographics'
+require 'ngp_van/client/designations'
+require 'ngp_van/client/disbursements'
 require 'ngp_van/client/district_fields'
 require 'ngp_van/client/echoes'
 require 'ngp_van/client/events'
@@ -58,8 +62,12 @@ module NgpVan
     include NgpVan::Client::ApiKeyProfiles
     include NgpVan::Client::CanvassResponses
     include NgpVan::Client::CanvassFileRequests
+    include NgpVan::Client::ChangedEntityExportJobs
     include NgpVan::Client::Codes
+    include NgpVan::Client::Contributions
     include NgpVan::Client::Demographics
+    include NgpVan::Client::Designations
+    include NgpVan::Client::Disbursements
     include NgpVan::Client::DistrictFields
     include NgpVan::Client::Echoes
     include NgpVan::Client::Events

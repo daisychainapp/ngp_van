@@ -1,0 +1,16 @@
+[
+  {
+    "name": "VanID",
+    "type": "N",
+    "maxTextboxCharacters": null,
+    "isCoreField": true,
+    "availableValues": null
+  },
+  {
+    "name": "ContributionID",
+    "type": "N",
+    "maxTextboxCharacters": null,
+    "isCoreField": true,
+    "availableValues": null
+  }
+]

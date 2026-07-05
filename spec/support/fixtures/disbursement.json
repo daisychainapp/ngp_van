@@ -1,0 +1,14 @@
+{
+  "disbursementId": 987654321,
+  "amount": 150.5,
+  "dateIssued": "2026-05-15T00:00:00Z",
+  "designation": {
+    "designationId": 12,
+    "name": "General"
+  },
+  "contact": {
+    "vanId": 215501
+  },
+  "checkNumber": "1043",
+  "checkDate": "2026-05-15T00:00:00Z"
+}
