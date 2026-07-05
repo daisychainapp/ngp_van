@@ -64,7 +64,7 @@ module NgpVan
     # actually advertises it, otherwise JSON parsing would mask the real
     # HTTP error with a JSON::ParserError.
     def json_response?(response)
-      content_type = response.response_headers&.[]('Content-Type')
+      content_type = response[:response_headers]&.[]('Content-Type')
       content_type&.match?(%r{application/json}i) || false
     end
 
