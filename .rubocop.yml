@@ -18,7 +18,7 @@ Metrics/BlockLength:
 Style/Documentation:
   Enabled: false
 
-Style/FileName:
+Naming/FileName:
   Enabled: false
 
 Metrics/ClassLength:

@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "contributionId": 1234567890,
+      "vanId": 215501,
+      "amount": 25.0,
+      "dateReceived": "2026-06-01T00:00:00Z",
+      "designation": {
+        "designationId": 12,
+        "name": "General"
+      }
+    }
+  ],
+  "count": 1,
+  "nextPageLink": null
+}

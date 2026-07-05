@@ -1,0 +1,15 @@
+{
+  "items": [
+    {
+      "disbursementId": 987654321,
+      "amount": 150.5,
+      "dateIssued": "2026-05-15T00:00:00Z",
+      "designation": {
+        "designationId": 12,
+        "name": "General"
+      }
+    }
+  ],
+  "count": 1,
+  "nextPageLink": null
+}

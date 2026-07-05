@@ -3,7 +3,7 @@
 module NgpVan
   class Client
     module Phones
-      def is_cell_statuses # rubocop:disable Naming/PredicateName
+      def is_cell_statuses # rubocop:disable Naming/PredicatePrefix
         get(path: 'phones/isCellStatuses')
       end
     end

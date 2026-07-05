@@ -15,21 +15,22 @@ module NgpVan
     end
 
     # Perform an HTTP POST request
-    def post(path:, body: {})
-      request(method: :post, path: path, body: body)
+    def post(path:, body: {}, headers: {})
+      request(method: :post, path: path, body: body, headers: headers)
     end
 
     # Perform an HTTP PUT request
-    def put(path:, body: {})
-      request(method: :put, path: path, body: body)
+    def put(path:, body: {}, headers: {})
+      request(method: :put, path: path, body: body, headers: headers)
     end
 
     private
 
-    def request(method:, path:, params: {}, body: {})
+    def request(method:, path:, params: {}, body: {}, headers: {})
       response = connection.send(method) do |request|
         request.path = path
         request.params = params
+        request.headers.update(headers) unless headers.empty?
         request.body = ::JSON.generate(body) unless body.empty?
       end
 

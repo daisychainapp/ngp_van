@@ -1,0 +1,10 @@
+{
+  "amount": 150.5,
+  "dateIssued": "2026-05-15T00:00:00Z",
+  "designationId": 12,
+  "contact": {
+    "vanId": 215501
+  },
+  "checkNumber": "1043",
+  "checkDate": "2026-05-15T00:00:00Z"
+}
