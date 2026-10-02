@@ -15,8 +15,8 @@ module NgpVan
     end
 
     # Perform an HTTP POST request
-    def post(path:, body: {}, headers: {})
-      request(method: :post, path: path, body: body, headers: headers)
+    def post(path:, body: {}, headers: {}, timeout: nil)
+      request(method: :post, path: path, body: body, headers: headers, timeout: timeout)
     end
 
     # Perform an HTTP PUT request
@@ -26,8 +26,9 @@ module NgpVan
 
     private
 
-    def request(method:, path:, params: {}, body: {}, headers: {})
+    def request(method:, path:, params: {}, body: {}, headers: {}, timeout: nil)
       response = connection.send(method) do |request|
+        request.options.timeout = timeout if timeout
         request.path = path
         request.params = params
         request.headers.update(headers) unless headers.empty?

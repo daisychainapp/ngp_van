@@ -3,8 +3,8 @@
 module NgpVan
   class Client
     module ExportJobs
-      def create_export_job(body: {})
-        post(path: 'exportJobs', body: body)
+      def create_export_job(body: {}, timeout: nil)
+        post(path: 'exportJobs', body: body, timeout: timeout)
       end
 
       def export_job(id:)

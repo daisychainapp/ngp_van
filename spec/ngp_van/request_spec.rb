@@ -149,6 +149,30 @@ module NgpVan
             .to have_been_made
         end
       end
+
+      context 'when passing a timeout to the request' do
+        before do
+          stub_request(:post, url)
+        end
+
+        it 'sets the read timeout on the request' do
+          timeouts = []
+          allow(client).to receive(:connection).and_wrap_original do |original|
+            original.call.tap do |connection|
+              allow(connection).to receive(:post).and_wrap_original do |post, &block|
+                post.call do |request|
+                  block.call(request)
+                  timeouts << request.options.timeout
+                end
+              end
+            end
+          end
+
+          client.post(path: '/some/resource', timeout: 300)
+
+          expect(timeouts).to eq([300])
+        end
+      end
     end
 
     describe '#put' do
