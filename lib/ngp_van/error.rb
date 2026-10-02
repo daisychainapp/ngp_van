@@ -5,8 +5,7 @@ module NgpVan
   class Error < StandardError
     attr_reader :body, :response, :status, :errors
 
-    # rubocop:disable Metrics/MethodLength, Metrics/AbcSize,
-    # rubocop:disable Style/CyclomaticComplexity
+    # rubocop:disable Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity
     # Returns a NgpVan::Error subclass, depending on status and
     # response message.
     #
@@ -40,8 +39,7 @@ module NgpVan
 
       error_klass&.new(response)
     end
-    # rubocop:enable Metrics/MethodLength, Metrics/AbcSize,
-    # rubocop:enable Style/CyclomaticComplexity
+    # rubocop:enable Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity
 
     def initialize(response = nil)
       @response = response

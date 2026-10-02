@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby-version: ['3.2', '3.3']
+        ruby-version: ['3.2', '3.3', '3.4', '4.0']
 
     steps:
     - uses: actions/checkout@v3
@@ -37,7 +37,7 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.0'
+        ruby-version: '4.0'
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
     - name: rubocop linter
       run: bundle exec rubocop
