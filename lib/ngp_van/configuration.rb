@@ -33,6 +33,15 @@ module NgpVan
     # @return [String]
     attr_accessor :user_agent
 
+    # A callable that receives each request's Faraday connection builder before
+    # the gem adds its own middleware, so the middleware it adds (e.g. rate
+    # limiting or instrumentation) wraps the whole request.
+    #
+    # @example
+    #   config.faraday_middleware = ->(connection) { connection.use MyMiddleware }
+    # @return [#call, nil]
+    attr_accessor :faraday_middleware
+
     def initialize
       setup
     end
@@ -44,6 +53,7 @@ module NgpVan
       @api_key = NgpVan::Default.api_key
       @api_endpoint = NgpVan::Default.api_endpoint
       @user_agent = NgpVan::Default.user_agent
+      @faraday_middleware = nil
       self
     end
 

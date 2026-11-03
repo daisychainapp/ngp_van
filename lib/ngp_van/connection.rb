@@ -6,7 +6,7 @@ module NgpVan
   module Connection
     private
 
-    # rubocop:disable Metrics/MethodLength
+    # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
     def connection
       options = {
         url: config.api_endpoint,
@@ -17,6 +17,7 @@ module NgpVan
       }
 
       Faraday.new(options) do |connection|
+        config.faraday_middleware&.call(connection)
         connection.request :authorization, :basic, config.application_name, config.api_key
 
         connection.request(:json)
@@ -24,6 +25,6 @@ module NgpVan
         connection.adapter(Faraday.default_adapter)
       end
     end
-    # rubocop:enable Metrics/MethodLength
+    # rubocop:enable Metrics/MethodLength, Metrics/AbcSize
   end
 end
