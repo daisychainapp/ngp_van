@@ -1,5 +1,6 @@
 ## [Unreleased]
 
+- [ADDED] `Configuration#faraday_middleware`: a callable that adds Faraday middleware to every request's connection, outside the gem's own.
 - [ADDED] Contributions endpoints (`create_contribution`, `contribution`, `contribution_by_type`, `contribution_attribution_types`, `create_or_update_contribution_attribution`, `delete_contribution_attribution`, `adjust_contribution`), ported from [controlshift/ngp_van](https://github.com/controlshift/ngp_van).
 - [ADDED] Designations endpoint (`designations`), ported from [controlshift/ngp_van](https://github.com/controlshift/ngp_van).
 - [ADDED] Additional Contributions endpoints: `create_contribution_payment` (`POST /contributions/payments`, with optional `Idempotency-Key` header) and `recent_contributions` (`GET /contributions/recentContributions`).
